@@ -12,10 +12,6 @@ import java.util.Scanner;
  * @author Jose Luis
  */
 public class Laboratorio2 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         
@@ -102,7 +98,7 @@ public class Laboratorio2 {
                     total = descuento + incentivo + bono;
                 } else {
                     if (edad > 31){
-                        descuento = sueldoMensual - 25;
+                        descuento = sueldoMensual - 35;
                         total = descuento + incentivo + bono;
                     }
                 }
