@@ -24,15 +24,12 @@ public class Laboratorio2 {
         String apellidos = "";
         String tipoEmpleado = "";
         double incentivo = 0;
-        double promedioEdades = 0;
         double total = 0;
         int hijos = 0;
         int bono = 0;
         int edad = 0;
-        int sumaEdades = 0;
-        int sueldoMensual = 0;
-        int descuento = 0;
-        int contador = 0;
+        double sueldoMensual = 0;
+        double descuento = 0;
         double seguroSocial = 0;
         double totalIncentivo = 0;
         double totalEmpresa = 0;
@@ -42,7 +39,6 @@ public class Laboratorio2 {
         cadena = String.format("%s%s\n", cadena, 
                 "\n\n-------REPARTO DE ROL DE PAGOS POR EMPLEADO-------\n\n");
         do{ 
-            contador = contador + 1;
             System.out.println("Ingrese sus nombres: ");
             nombres = entrada.nextLine();
             
@@ -53,7 +49,8 @@ public class Laboratorio2 {
             edad = entrada.nextInt();
             entrada.nextLine();
             
-            System.out.println("Ingrese el tipo de empleado que sea usted: ");
+            System.out.println("Ingrese el tipo de empleado que sea usted "
+                    + "(tipo 1, tipo 2, tipo 3 o tipo 4) ");
             tipoEmpleado = entrada.nextLine();
             
             System.out.println("¿Cuantos hijos tiene usted?: ");
@@ -110,9 +107,9 @@ public class Laboratorio2 {
                     }
                 }
             }
-            cadena = String.format("%s NOMBRES: %s %s, (%d años)\n\t "
-                    + "SUELDO MENSUAL: %d$\n\t INCENTIVO-1: %.2f$\n\t "
-                    + "HIJOS: %d\n\t DESCUENTO: SS %d$ \n\t "
+            cadena = String.format("%s NOMBRE: %s %s, (%d años)\n\t "
+                    + "SUELDO MENSUAL: %.2f$\n\t INCENTIVO-1: %.2f$\n\t "
+                    + "HIJOS: %d\n\t DESCUENTO: SS %.2f$ \n\t "
                     + "TOTAL A PAGAR: %.2f$\n\n", 
                     cadena, nombres, apellidos, edad, sueldoMensual, 
                     incentivo, hijos, descuento, total);
@@ -128,7 +125,8 @@ public class Laboratorio2 {
                     + "en caso de que quiera seguir.");
             valorUsuario = entrada.nextLine();
             
-            if (valorUsuario.equals ("no")){
+            if (valorUsuario.equals ("si") || valorUsuario.equals ("Si") || 
+                    valorUsuario.equals ("SI")){
                 bandera = false;
             }
             
