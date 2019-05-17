@@ -29,6 +29,7 @@ public class Laboratorio2 {
         double seguroSocial = 0;
         double totalIncentivo = 0;
         double totalEmpresa = 0;
+        double total_pagar = 0;
         int totalHijos = 0;
         boolean bandera = true;
         String valorUsuario = "";
@@ -103,18 +104,20 @@ public class Laboratorio2 {
                     }
                 }
             }
+            total_pagar = total + sueldoMensual;
+            
             cadena = String.format("%s NOMBRE: %s %s, (%d años)\n\t "
                     + "SUELDO MENSUAL: %.2f$\n\t INCENTIVO-1: %.2f$\n\t "
-                    + "HIJOS: %d\n\t DESCUENTO: SS %.2f$ \n\t "
+                    + "HIJOS: %d\n\t DESCUENTO SS: %.2f$ \n\t "
                     + "TOTAL A PAGAR: %.2f$\n\n", 
                     cadena, nombres, apellidos, edad, sueldoMensual, 
-                    incentivo, hijos, descuento, total);
+                    incentivo, hijos, total, total_pagar);
             entrada.nextLine();
             
             seguroSocial = descuento + seguroSocial;
             totalIncentivo = incentivo + totalIncentivo;
             totalHijos = bono + totalHijos;
-            totalEmpresa = total + totalEmpresa;
+            totalEmpresa = total_pagar + totalEmpresa;
             
             System.out.println("¿Desea salir? ingrese 'si' "
                     + "en caso de que quiera salir, ingrese 'no' "
